@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "dev": "node --watch src/index.ts",
+    "dev": "tsx --env-file=.env --watch src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node --env-file=.env dist/index.js",
     "typecheck": "tsc --noEmit"
   },
   "keywords": [],
@@ -15,12 +15,11 @@
   "license": "ISC",
   "packageManager": "pnpm@11.9.0",
   "dependencies": {
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "axios": "^1.18.1",
+    "express": "^5.2.1",
+    "tsx": "^4.23.0"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.0",
     "typescript": "^6.0.3"
