@@ -8,7 +8,7 @@ export const errorHandler = (
   err: CustomError,
   req: Request,
   res: Response,
-  next: NextFunction,
+  _next: NextFunction,
 ) => {
   const status = err.status || 500;
   const message = err.message || "Ошибка сервера";
