@@ -61,4 +61,13 @@ router.get("/movie/:movieId/videos", async (req, res, next) => {
   }
 });
 
+router.get("/genre/movie/list", async (_req, res, next) => {
+  try {
+    const response = await api.get(`/genre/movie/list?language=${language}`);
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export default router;

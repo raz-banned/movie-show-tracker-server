@@ -21,4 +21,13 @@ router.get("/trending/tv/:timeWindow", async (req, res, next) => {
   }
 });
 
+router.get("/genre/tv/list", async (_req, res, next) => {
+  try {
+    const response = await api.get(`/genre/tv/list?language=${language}`);
+    res.status(response.status).json(response.data);
+  } catch (error) {
+    next(error);
+  }
+});
+
 export default router;
